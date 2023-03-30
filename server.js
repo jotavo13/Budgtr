@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 
 //INDEX route
-app.get('', (req, res) => {
+app.get('/budget', (req, res) => {
     let total = 0;
     for(let i = 0; i < budgets.length; i++) {
         total += budgets[i].amount;
