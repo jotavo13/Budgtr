@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgtr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+</head>
+<body>
+    <div class="container">
+        <h1><%= budget.name %></h1>
+        <h5>Date: <%= budget.date %> </h5>
+        <h5>From: <%= budget.from %> </h5>
+        <h5>Amount: <%= budget.amount %> </h5>
+        <h5>Tags: <%= budget.tags %> </h5>
+        <button onclick = "window.location.href='http://localhost:3000/budgets';">BACK</button>    
+    </div>
+</body>
+</html>

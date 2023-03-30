@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All the Budgets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Budgtr</h1>
+        <table>
+            <% for(let i = 0; i < budgets.length; i++){%>
+                <tr>
+                    <td>
+                        <%= budgets[i].date %>
+                    </td>
+                    <td>
+                        <a href="/budgets/<%= i %>"><%= budgets[i].name %></a>
+                    </td>
+                    <td>
+                        <%= budgets[i].from %>
+                    </td>
+                    <td>
+                        Amount: <%= budgets[i].amount %>$
+                    </td>
+                </tr>
+                </tr>
+            <% } %>
+                 
+            <% if( total < 0){ %>
+                <p style="margin:0px; background-color:rgb(63, 28, 28)">Total: $<%= total %></p>
+            <%  } %>
+            <% if( total > 1000){ %>
+                <p style="margin:0px; background-color:rgba(21, 85, 21, 0.321)">Total: $<%= total %></p>
+            <%  } %>
+            <% if(total > 0 && total < 1000){ %>
+                <p style="margin:0px;">Total: $<%= total %></p>
+            <%  } %>
+        </table>
+        <button onclick = "window.location.href='http://localhost:4000/budgets/new';">New</button>
+    </div>
+</body>
+</html>
